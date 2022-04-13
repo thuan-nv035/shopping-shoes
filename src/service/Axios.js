@@ -20,6 +20,13 @@ function getInstance(){
     })
 
     //hook interceptor cai o day
+    axiosInstance.interceptors.request.use(config=>{//đoạn này để check token, cơ chế bảo mật api và đồng bộ hóa với back end
+        const token = localStorage.getItem('token');
+        if(token){
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    });
     return axiosInstance;
 }
 
@@ -47,3 +54,6 @@ export const Axios = {
     put,
     del
 }
+
+
+

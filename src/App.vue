@@ -1,29 +1,26 @@
 <template>
-  <div id="app">
-    <HomePage></HomePage>
-<!--    <ProductDetailComponent></ProductDetailComponent>-->
-<!--    <CartComponent></CartComponent>-->
+    <div class="container mx-auto">
 
-  </div>
+        <NavMenu></NavMenu>
+        <router-view></router-view>
+        <Footer></Footer>
+
+    </div>
 </template>
 
 <script>
-  import HomePage from "@/pages/Home";
-// import CartComponent from "@/components/CartComponent";
+    import NavMenu from './page/NavMenu'
+    import Footer from './page/Footer'
 
-// import ProductDetailComponent from "@/components/ProductDetailComponent";
-export default {
-  name: 'App',
-  components: {
-    HomePage
-    // ProductDetailComponent,
-    // CartComponent
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            NavMenu,
+            Footer
+        }
+    }
 </script>
 
 <style>
-#app {
 
-}
 </style>
